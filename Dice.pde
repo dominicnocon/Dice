@@ -1,11 +1,12 @@
 void setup()
 {
-	size(241,241);
+	size(241,261);
 	noLoop();
 }
 void draw()
 {
-	for (int y=3; y<=300; y=y+40)
+	int totalDot=0;
+	for (int y=23; y<=263; y=y+40)
   {
     for (int x=3; x<=240; x=x+40)
     {
@@ -13,8 +14,12 @@ void draw()
       Die bob = new Die(x, y);
       bob.roll();
       bob.show();
+      totalDot = totalDot + bob.num;
+      fill(0);
+      text (totalDot, 12,20);
     }
    }
+   text (totalDot, 12,20);
 }
 
 void mousePressed()
