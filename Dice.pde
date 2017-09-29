@@ -1,12 +1,13 @@
 void setup()
 {
-	size(241,261);
+	size(241,255);
 	noLoop();
 }
 void draw()
 {
+	background(200);
 	int totalDot=0;
-	for (int y=23; y<=263; y=y+40)
+	for (int y=20; y<=245; y=y+40)
   {
     for (int x=3; x<=240; x=x+40)
     {
@@ -15,11 +16,12 @@ void draw()
       bob.roll();
       bob.show();
       totalDot = totalDot + bob.num;
-      fill(0);
-      text (totalDot, 12,20);
+      fill(255,0,0);
+      textSize(15);
+      text (totalDot, 12,0);
     }
    }
-   text (totalDot, 12,20);
+   text (totalDot, 12,12);
 }
 
 void mousePressed()
@@ -34,7 +36,7 @@ class Die //models one single dice cube
 	Die(int x, int y) //constructor
 	{
     	myX=x;
-    	myY=y;
+    	myY=y +33;
 
 	}
 
@@ -47,53 +49,53 @@ class Die //models one single dice cube
 	{
 		noStroke();
 		fill(0);
-		rect(myX, myY, 35,35,5);
+		rect(myX, myY-38, 35,35,5);
 
 
-		fill(200);
-		myX= myX +18;
-		myY = myY -23;
+		fill(200,0,0);
+		
+		
 		if (num==1)
-			ellipse(myX, myY, 4,4);
+			ellipse(myX+18, myY-23, 4,4);
 
 		else if (num==2)
 		{
-			ellipse(myX-5, myY+5, 4,4);
-			ellipse(myX+5, myY-5, 4,4);
+			ellipse(myX-5+18, myY+5-23, 4,4);
+			ellipse(myX+5+18, myY-5-23, 4,4);
 		}
 
 		else if (num==3)
 		{
-			ellipse(myX, myY, 4,4);
-			ellipse(myX-5, myY+5, 4,4);
-			ellipse(myX+5, myY-5, 4,4);
+			ellipse(myX+18, myY-23, 4,4);
+			ellipse(myX-5+18, myY+5-23, 4,4);
+			ellipse(myX+5+18, myY-5-23, 4,4);
 		}
 
 		else if (num==4)
 		{
-			ellipse(myX-5, myY+5, 4,4);
-			ellipse(myX+5, myY-5, 4,4);
-			ellipse(myX-5, myY-5, 4,4);
-			ellipse(myX+5, myY+5, 4,4);
+			ellipse(myX-5+18, myY+5-23, 4,4);
+			ellipse(myX+5+18, myY-5-23, 4,4);
+			ellipse(myX-5+18, myY-5-23, 4,4);
+			ellipse(myX+5+18, myY+5-23, 4,4);
 		}
 
 		else if (num==5)
 		{
-			ellipse(myX, myY, 4,4);
-			ellipse(myX-5, myY+5, 4,4);
-			ellipse(myX+5, myY-5, 4,4);
-			ellipse(myX-5, myY-5, 4,4);
-			ellipse(myX+5, myY+5, 4,4);
+			ellipse(myX+18, myY-23, 4,4);
+			ellipse(myX-5+18, myY+5-23, 4,4);
+			ellipse(myX+5+18, myY-5-23, 4,4);
+			ellipse(myX-5+18, myY-5-23, 4,4);
+			ellipse(myX+5+18, myY+5-23, 4,4);
 		}
 
 		else if (num==6)
 		{
-			ellipse(myX-5, myY+5, 4,4);
-			ellipse(myX-5, myY, 4,4);
-			ellipse(myX-5, myY-5, 4,4);
-			ellipse(myX+5, myY+5, 4,4);
-			ellipse(myX+5, myY, 4,4);
-			ellipse(myX+5, myY-5, 4,4);
+			ellipse(myX-5+18, myY+5-23, 4,4);
+			ellipse(myX-5+18, myY-23, 4,4);
+			ellipse(myX-5+18, myY-5-23, 4,4);
+			ellipse(myX+5+18, myY+5-23, 4,4);
+			ellipse(myX+5+18, myY-23, 4,4);
+			ellipse(myX+5+18, myY-5-23, 4,4);
 		}
 	}
 }
